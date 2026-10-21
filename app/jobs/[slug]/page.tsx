@@ -16,9 +16,9 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const job = getJob(params.slug)
-  // The title pattern is the 'Job role' template page's meta title in BetterCMS, e.g. "{{title}} - Careers - Audira".
-  const pattern = pageMeta('job-role').title ?? '{{title}}'
-  return job ? { title: pattern.replace('{{title}}', job.title) } : {}
+  // "<role> - " followed by the Careers page's meta title in BetterCMS ("Careers - Audira").
+  const careers = pageMeta('jobs').title
+  return job ? { title: careers ? `${job.title} - ${careers}` : job.title } : {}
 }
 
 export default function JobPage({ params }: { params: { slug: string } }) {
