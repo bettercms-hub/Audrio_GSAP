@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import { DM_Sans, Outfit } from 'next/font/google'
+import { draftMode } from 'next/headers'
+import { BcmsDraftMarker } from '@bettercms-ai/next'
+import { VisualEditing } from '@bettercms-ai/next/visual-editing'
 import './globals.css'
 
 const dmSans = DM_Sans({ 
@@ -27,6 +30,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${dmSans.variable} ${outfit.variable} font-sans`}>
         {children}
+        {/* The BetterCMS editor trusts the frame as this site only with the draft marker; its click-to-edit overlay loads in draft mode only. */}
+        <BcmsDraftMarker />
+        {draftMode().isEnabled && <VisualEditing />}
       </body>
     </html>
   )
