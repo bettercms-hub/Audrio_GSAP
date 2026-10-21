@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 import path from "path";
 
-/** One open role, synced from JobDiva into the BetterCMS "jobs" collection. */
+/** One open role, synced from JobDiva into the BetterCMS "Jobs" collection (slug job-openings). */
 export type Job = {
   slug: string;
   title: string;
@@ -21,10 +21,19 @@ const html = (v: unknown) => str(v) ?? str((v as { html?: unknown } | null)?.htm
 const href = (v: unknown) => str(v) ?? str((v as { href?: unknown } | null)?.href);
 
 // ponytail: reads the whole snapshot per call; fine for a few hundred roles at build time
-function entries(): Entry[] {
+function snapshot() {
   // Written by `bettercms pull-content` at the start of every build: a missing file is a broken build, not "no jobs".
-  const snapshot = JSON.parse(readFileSync(path.join(process.cwd(), "bcms-content.json"), "utf8"));
-  return snapshot.collections?.jobs ?? [];
+  return JSON.parse(readFileSync(path.join(process.cwd(), "bcms-content.json"), "utf8"));
+}
+
+function entries(): Entry[] {
+  return snapshot().collections?.["job-openings"] ?? [];
+}
+
+/** A CMS page's native SEO fields, for Next's metadata. */
+export function pageMeta(slug: string): { title?: string; description?: string } {
+  const page = snapshot().pages?.find((p: { slug: string }) => p.slug === slug);
+  return { title: str(page?.metaTitle), description: str(page?.metaDescription) };
 }
 
 /** Published roles shown on the site, newest first. */
