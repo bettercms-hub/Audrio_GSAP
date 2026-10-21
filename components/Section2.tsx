@@ -2,11 +2,11 @@ import React from 'react'
 import bcmsHome from "../bcms-content/home.json";
 import { bcms, bcmsRows, bcmsStyle } from "../src/bcms-content";
 
-export default function Section2() {
+export default function Section2({ rootProps }: { rootProps?: React.ComponentProps<'section'> }) {
   // ponytail: the owner's three fixed boxes; rows added in the CMS past the third need a fourth box here
   const cards = bcmsRows<Record<string, string>>(bcmsHome, "section2-group-crystal-clear-audio", [])
   return (
-    <section id="section2" data-bcms-section-label="Section2">
+    <section id="section2" data-bcms-section-label="Section2" {...rootProps}>
       <div className="content-wrapper">
         <h2 className="heading" data-bcms-field="section2-h2-true-clarity" data-bcms-kind="text" data-bcms-style="2" style={bcmsStyle(bcmsHome, "section2-h2-true-clarity")}>{bcms(bcmsHome, "section2-h2-true-clarity", "True Clarity")}</h2>
         <p dangerouslySetInnerHTML={{ __html: bcms(bcmsHome, "section2-p-engineered-for-clarity-comfort", "Engineered for clarity, comfort, and immersive sound — Audira\n          redefines your listening experience with style and performance\n          in perfect harmony.") }} data-bcms-field="section2-p-engineered-for-clarity-comfort" data-bcms-kind="richtext" data-bcms-style="2" style={bcmsStyle(bcmsHome, "section2-p-engineered-for-clarity-comfort")}></p>

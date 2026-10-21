@@ -2,7 +2,7 @@ import React from 'react'
 import bcmsHome from "../bcms-content/home.json";
 import { bcms, bcmsStyle } from "../src/bcms-content";
 
-export default function Section5() {
+export default function Section5({ rootProps }: { rootProps?: React.ComponentProps<'section'> }) {
   const products = [
     { name: ['section5-div-audira-one', 'Audira One'], price: ['section5-div-4499', '4499'], image: ['section5-img-audira-one', '/images/green.png'] },
     { name: ['section5-div-audira-plus', 'Audira Plus'], price: ['section5-div-7499', '7499'], image: null },
@@ -10,7 +10,7 @@ export default function Section5() {
   ] as const
 
   return (
-    <section id="section5" data-bcms-section-label="Section5">
+    <section id="section5" data-bcms-section-label="Section5" {...rootProps}>
       <h2 className="heading" data-bcms-field="section5-h2-top-picks" data-bcms-kind="text" data-bcms-style="2" style={bcmsStyle(bcmsHome, "section5-h2-top-picks")}>{bcms(bcmsHome, "section5-h2-top-picks", "Top Picks")}</h2>
       <div className="product-section">
         {products.map((product, index) => (

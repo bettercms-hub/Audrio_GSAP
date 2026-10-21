@@ -2,9 +2,9 @@ import React from 'react'
 import bcmsHome from "../bcms-content/home.json";
 import { bcms, bcmsStyle } from "../src/bcms-content";
 
-export default function Section3() {
+export default function Section3({ rootProps }: { rootProps?: React.ComponentProps<'section'> }) {
   return (
-    <section id="section3" data-bcms-section-label="Section3">
+    <section id="section3" data-bcms-section-label="Section3" {...rootProps}>
       <h2 className="heading" data-bcms-field="section3-h2-masterbeat" data-bcms-kind="text" data-bcms-style="2" style={bcmsStyle(bcmsHome, "section3-h2-masterbeat")}>{bcms(bcmsHome, "section3-h2-masterbeat", "Masterbeat")}</h2>
       <div className="content-wrapper">
         <video width="500" height="auto" autoPlay loop muted className="radius">

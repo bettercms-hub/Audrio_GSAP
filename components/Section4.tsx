@@ -2,9 +2,9 @@ import React from 'react'
 import bcmsHome from "../bcms-content/home.json";
 import { bcms, bcmsStyle } from "../src/bcms-content";
 
-export default function Section4() {
+export default function Section4({ rootProps }: { rootProps?: React.ComponentProps<'section'> }) {
   return (
-    <section id="section4" data-bcms-section-label="Section4">
+    <section id="section4" data-bcms-section-label="Section4" {...rootProps}>
       <img 
         src={bcms(bcmsHome, "section4-img-audira-lifestyle", "/images/img1.jpeg")} 
         alt="Audira lifestyle" 

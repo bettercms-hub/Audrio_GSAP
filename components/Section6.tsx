@@ -2,10 +2,10 @@ import React from 'react'
 import bcmsHome from "../bcms-content/home.json";
 import { bcms, bcmsStyle } from "../src/bcms-content";
 
-export default function Section6() {
+export default function Section6({ rootProps }: { rootProps?: React.ComponentProps<'section'> }) {
   const body = bcms(bcmsHome, "section6-body-pure-escapestep-into-a", "")
   return (
-    <section id="section6" className="w-full" data-bcms-section-label="Section6">
+    <section id="section6" className="w-full" data-bcms-section-label="Section6" {...rootProps}>
       <img 
         src={bcms(bcmsHome, "section6-img-audira-lifestyle", "/images/img4.jpg")} 
         className="radius" 
