@@ -4,6 +4,8 @@ import Footer from '@/components/Footer'
 import { formatDate, jobLocation, listJobs, pageMeta } from '@/src/jobs'
 import bcmsJobs from '../../bcms-content/jobs.json'
 import { bcms, bcmsStyle } from '../../src/bcms-content'
+import { sectionsFor } from '@bettercms-ai/next'
+import { BcmsSections, BcmsSection } from '@bettercms-ai/next/sections'
 
 export const generateMetadata = (): Metadata => pageMeta('jobs')
 
@@ -13,7 +15,9 @@ export default function JobsPage() {
   return (
     <>
       <Header />
-      <main className="jobs w-full">
+      <BcmsSections {...sectionsFor('jobs')}>
+      <BcmsSection bind="jobs">{(root) => (
+      <main className="jobs w-full" {...root}>
         <h1 className="heading" data-bcms-field="jobs-heading" data-bcms-kind="text" data-bcms-style="2" style={bcmsStyle(bcmsJobs, 'jobs-heading')}>{bcms(bcmsJobs, 'jobs-heading', 'Careers')}</h1>
         <p className="jobs-intro" data-bcms-field="jobs-intro" data-bcms-kind="text" data-bcms-style="2" style={bcmsStyle(bcmsJobs, 'jobs-intro')}>{bcms(bcmsJobs, 'jobs-intro', 'Help us build headphones people never want to take off. Explore the open roles at Audira.')}</p>
 
@@ -37,6 +41,8 @@ export default function JobsPage() {
           </ul>
         )}
       </main>
+      )}</BcmsSection>
+      </BcmsSections>
       <Footer />
     </>
   )
