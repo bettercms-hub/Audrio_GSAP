@@ -11,6 +11,8 @@ import Section3 from '@/components/Section3'
 import Section4 from '@/components/Section4'
 import Section5 from '@/components/Section5'
 import Section6 from '@/components/Section6'
+import bcmsHome from "../bcms-content/home.json";
+import { bcms, bcmsStyle } from "../src/bcms-content";
 
 // Register GSAP plugins
 if (typeof window !== 'undefined') {
@@ -184,9 +186,9 @@ export default function Home() {
         <div id="main" className="w-full overflow-hidden">
           <img 
             ref={headphoneRef}
-            src="/images/brown.png" 
+            src={bcms(bcmsHome, "img-audira-headphones", "/images/brown.png")} 
             alt="Audira Headphones" 
-            id="headphone"
+            id="headphone" data-bcms-field="img-audira-headphones" data-bcms-kind="image" data-bcms-style="2" style={bcmsStyle(bcmsHome, "img-audira-headphones")}
           />
 
           <Section1 />

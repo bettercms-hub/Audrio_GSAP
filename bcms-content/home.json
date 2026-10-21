@@ -1,0 +1,372 @@
+{
+  "nav-a-buy-now": "Buy Now",
+  "nav-img-audira": {
+    "url": "/images/logo.png",
+    "altText": "Audira"
+  },
+  "section5-div-4499": 4499,
+  "section5-div-7499": 7499,
+  "section5-div-11499": 11499,
+  "footer-img-facebook": {
+    "url": "/images/fb.png",
+    "altText": "Facebook"
+  },
+  "footer-img-instagram": {
+    "url": "/images/insta.png",
+    "altText": "Instagram"
+  },
+  "section3-video-video": "/images/video.mp4",
+  "img-audira-headphones": {
+    "url": "/images/brown.png",
+    "altText": "Audira Headphones"
+  },
+  "section5-h2-top-picks": "Top Picks",
+  "section3-h2-masterbeat": "Masterbeat",
+  "section5-div-audira-one": "Audira One",
+  "section5-img-audira-one": {
+    "url": "/images/green.png",
+    "altText": "Audira One"
+  },
+  "section2-h2-true-clarity": "True Clarity",
+  "section5-div-audira-plus": "Audira Plus",
+  "section1-h1-modern-harmony": "Modern Harmony",
+  "section5-div-audira-max-pro": "Audira Max Pro",
+  "section5-img-audira-max-pro": {
+    "url": "/images/black.png",
+    "altText": "Audira Max Pro"
+  },
+  "section4-img-audira-lifestyle": {
+    "url": "/images/img1.jpeg",
+    "altText": "Audira lifestyle"
+  },
+  "section6-img-audira-lifestyle": {
+    "url": "/images/img4.jpg",
+    "altText": "Audira lifestyle"
+  },
+  "section4-img-audira-lifestyle-2": {
+    "url": "/images/img2.jpeg",
+    "altText": "Audira lifestyle"
+  },
+  "section4-img-audira-lifestyle-3": {
+    "url": "/images/img3.jpeg",
+    "altText": "Audira lifestyle"
+  },
+  "section3-p-crafted-for-the-modern": {
+    "html": "Crafted for the modern audiophile, Audira headphones deliver sound so rich, it pulses through your senses. From crisp highs to deep, rolling bass—you don&#x27;t just hear it, you feel it.",
+    "value": [
+      {
+        "_key": "9VCzmwBJaxzX",
+        "_type": "block",
+        "style": "normal",
+        "children": [
+          {
+            "_key": "WAcAjVYkQCB4",
+            "text": "Crafted for the modern audiophile, Audira headphones deliver sound so rich, it pulses through your senses. From crisp highs to deep, rolling bass—you don't just hear it, you feel it.",
+            "_type": "span",
+            "marks": []
+          }
+        ],
+        "markDefs": []
+      }
+    ],
+    "format": "portable-text-1"
+  },
+  "section3-p-whether-youre-in-focus": {
+    "html": "Whether you&#x27;re in focus mode or free flow, the precision-tuned audio adapts to your pace. With Masterbeat, music becomes your personal soundtrack—bold, immersive, unforgettable.",
+    "value": [
+      {
+        "_key": "dziYKwWXsjn5",
+        "_type": "block",
+        "style": "normal",
+        "children": [
+          {
+            "_key": "YmHmSMDGAnlS",
+            "text": "Whether you're in focus mode or free flow, the precision-tuned audio adapts to your pace. With Masterbeat, music becomes your personal soundtrack—bold, immersive, unforgettable.",
+            "_type": "span",
+            "marks": []
+          }
+        ],
+        "markDefs": []
+      }
+    ],
+    "format": "portable-text-1"
+  },
+  "section2-group-crystal-clear-audio": {
+    "repeatable": [
+      {
+        "_id": "mEGsxJKzIr",
+        "_key": "m1wkyvappgn1",
+        "div-crystal-clear-audio": "Crystal-Clear Audio",
+        "div-hear-every-detail-with": "Hear every detail with balanced bass and studio-quality mids and highs."
+      },
+      {
+        "_id": "tfn1K8ydf7",
+        "_key": "m1dykzkfvfda",
+        "div-crystal-clear-audio": "All-Day Comfort",
+        "div-hear-every-detail-with": "Lightweight build with plush ear cushions and ergonomic fit."
+      },
+      {
+        "_id": "nERNjlmHz0",
+        "_key": "m1k0btxtfkzh",
+        "div-crystal-clear-audio": "40+ Hour Battery Life",
+        "div-hear-every-detail-with": "Long-lasting performance, wherever you go."
+      }
+    ]
+  },
+  "section6-body-pure-escapestep-into-a": {
+    "html": "<h2 class=\"heading\">Pure Escape</h2><p>Step into a world where every note feels alive. Audira headphones are engineered to create a sound experience that surrounds you—deep, rich, and breathtaking.</p><p>Whether you&#x27;re working, relaxing, or moving, our design blends comfort and clarity for every lifestyle. You don&#x27;t just listen — you feel the moment.</p>",
+    "value": [
+      {
+        "_key": "GDkXbqlbaxjc",
+        "_type": "block",
+        "style": "h2",
+        "children": [
+          {
+            "_key": "jXypOL5FWuGL",
+            "text": "Pure Escape",
+            "_type": "span",
+            "marks": []
+          }
+        ],
+        "markDefs": []
+      },
+      {
+        "_key": "Xzn5JqtasINM",
+        "_type": "block",
+        "style": "normal",
+        "children": [
+          {
+            "_key": "gJL0C5PDvLHF",
+            "text": "Step into a world where every note feels alive. Audira headphones are engineered to create a sound experience that surrounds you—deep, rich, and breathtaking.",
+            "_type": "span",
+            "marks": []
+          }
+        ],
+        "markDefs": []
+      },
+      {
+        "_key": "OTYLMxvZ5lBh",
+        "_type": "block",
+        "style": "normal",
+        "children": [
+          {
+            "_key": "FnWGIAyv6CA9",
+            "text": "Whether you're working, relaxing, or moving, our design blends comfort and clarity for every lifestyle. You don't just listen — you feel the moment.",
+            "_type": "span",
+            "marks": []
+          }
+        ],
+        "markDefs": []
+      }
+    ],
+    "format": "portable-text-1"
+  },
+  "section2-p-engineered-for-clarity-comfort": {
+    "html": "Engineered for clarity, comfort, and immersive sound — Audira redefines your listening experience with style and performance in perfect harmony.",
+    "value": [
+      {
+        "_key": "KiIUMk1A0j1j",
+        "_type": "block",
+        "style": "normal",
+        "children": [
+          {
+            "_key": "iCadvDLzextt",
+            "text": "Engineered for clarity, comfort, and immersive sound — Audira redefines your listening experience with style and performance in perfect harmony.",
+            "_type": "span",
+            "marks": []
+          }
+        ],
+        "markDefs": []
+      }
+    ],
+    "format": "portable-text-1"
+  },
+  "slug": "home",
+  "entries": {
+    "home": {
+      "nav-a-buy-now": "Buy Now",
+      "nav-img-audira": {
+        "url": "/images/logo.png",
+        "altText": "Audira"
+      },
+      "section5-div-4499": 4499,
+      "section5-div-7499": 7499,
+      "section5-div-11499": 11499,
+      "footer-img-facebook": {
+        "url": "/images/fb.png",
+        "altText": "Facebook"
+      },
+      "footer-img-instagram": {
+        "url": "/images/insta.png",
+        "altText": "Instagram"
+      },
+      "section3-video-video": "/images/video.mp4",
+      "img-audira-headphones": {
+        "url": "/images/brown.png",
+        "altText": "Audira Headphones"
+      },
+      "section5-h2-top-picks": "Top Picks",
+      "section3-h2-masterbeat": "Masterbeat",
+      "section5-div-audira-one": "Audira One",
+      "section5-img-audira-one": {
+        "url": "/images/green.png",
+        "altText": "Audira One"
+      },
+      "section2-h2-true-clarity": "True Clarity",
+      "section5-div-audira-plus": "Audira Plus",
+      "section1-h1-modern-harmony": "Modern Harmony",
+      "section5-div-audira-max-pro": "Audira Max Pro",
+      "section5-img-audira-max-pro": {
+        "url": "/images/black.png",
+        "altText": "Audira Max Pro"
+      },
+      "section4-img-audira-lifestyle": {
+        "url": "/images/img1.jpeg",
+        "altText": "Audira lifestyle"
+      },
+      "section6-img-audira-lifestyle": {
+        "url": "/images/img4.jpg",
+        "altText": "Audira lifestyle"
+      },
+      "section4-img-audira-lifestyle-2": {
+        "url": "/images/img2.jpeg",
+        "altText": "Audira lifestyle"
+      },
+      "section4-img-audira-lifestyle-3": {
+        "url": "/images/img3.jpeg",
+        "altText": "Audira lifestyle"
+      },
+      "section3-p-crafted-for-the-modern": {
+        "html": "Crafted for the modern audiophile, Audira headphones deliver sound so rich, it pulses through your senses. From crisp highs to deep, rolling bass—you don&#x27;t just hear it, you feel it.",
+        "value": [
+          {
+            "_key": "9VCzmwBJaxzX",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "WAcAjVYkQCB4",
+                "text": "Crafted for the modern audiophile, Audira headphones deliver sound so rich, it pulses through your senses. From crisp highs to deep, rolling bass—you don't just hear it, you feel it.",
+                "_type": "span",
+                "marks": []
+              }
+            ],
+            "markDefs": []
+          }
+        ],
+        "format": "portable-text-1"
+      },
+      "section3-p-whether-youre-in-focus": {
+        "html": "Whether you&#x27;re in focus mode or free flow, the precision-tuned audio adapts to your pace. With Masterbeat, music becomes your personal soundtrack—bold, immersive, unforgettable.",
+        "value": [
+          {
+            "_key": "dziYKwWXsjn5",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "YmHmSMDGAnlS",
+                "text": "Whether you're in focus mode or free flow, the precision-tuned audio adapts to your pace. With Masterbeat, music becomes your personal soundtrack—bold, immersive, unforgettable.",
+                "_type": "span",
+                "marks": []
+              }
+            ],
+            "markDefs": []
+          }
+        ],
+        "format": "portable-text-1"
+      },
+      "section2-group-crystal-clear-audio": {
+        "repeatable": [
+          {
+            "_id": "mEGsxJKzIr",
+            "_key": "m1wkyvappgn1",
+            "div-crystal-clear-audio": "Crystal-Clear Audio",
+            "div-hear-every-detail-with": "Hear every detail with balanced bass and studio-quality mids and highs."
+          },
+          {
+            "_id": "tfn1K8ydf7",
+            "_key": "m1dykzkfvfda",
+            "div-crystal-clear-audio": "All-Day Comfort",
+            "div-hear-every-detail-with": "Lightweight build with plush ear cushions and ergonomic fit."
+          },
+          {
+            "_id": "nERNjlmHz0",
+            "_key": "m1k0btxtfkzh",
+            "div-crystal-clear-audio": "40+ Hour Battery Life",
+            "div-hear-every-detail-with": "Long-lasting performance, wherever you go."
+          }
+        ]
+      },
+      "section6-body-pure-escapestep-into-a": {
+        "html": "<h2 class=\"heading\">Pure Escape</h2><p>Step into a world where every note feels alive. Audira headphones are engineered to create a sound experience that surrounds you—deep, rich, and breathtaking.</p><p>Whether you&#x27;re working, relaxing, or moving, our design blends comfort and clarity for every lifestyle. You don&#x27;t just listen — you feel the moment.</p>",
+        "value": [
+          {
+            "_key": "GDkXbqlbaxjc",
+            "_type": "block",
+            "style": "h2",
+            "children": [
+              {
+                "_key": "jXypOL5FWuGL",
+                "text": "Pure Escape",
+                "_type": "span",
+                "marks": []
+              }
+            ],
+            "markDefs": []
+          },
+          {
+            "_key": "Xzn5JqtasINM",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "gJL0C5PDvLHF",
+                "text": "Step into a world where every note feels alive. Audira headphones are engineered to create a sound experience that surrounds you—deep, rich, and breathtaking.",
+                "_type": "span",
+                "marks": []
+              }
+            ],
+            "markDefs": []
+          },
+          {
+            "_key": "OTYLMxvZ5lBh",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "FnWGIAyv6CA9",
+                "text": "Whether you're working, relaxing, or moving, our design blends comfort and clarity for every lifestyle. You don't just listen — you feel the moment.",
+                "_type": "span",
+                "marks": []
+              }
+            ],
+            "markDefs": []
+          }
+        ],
+        "format": "portable-text-1"
+      },
+      "section2-p-engineered-for-clarity-comfort": {
+        "html": "Engineered for clarity, comfort, and immersive sound — Audira redefines your listening experience with style and performance in perfect harmony.",
+        "value": [
+          {
+            "_key": "KiIUMk1A0j1j",
+            "_type": "block",
+            "style": "normal",
+            "children": [
+              {
+                "_key": "iCadvDLzextt",
+                "text": "Engineered for clarity, comfort, and immersive sound — Audira redefines your listening experience with style and performance in perfect harmony.",
+                "_type": "span",
+                "marks": []
+              }
+            ],
+            "markDefs": []
+          }
+        ],
+        "format": "portable-text-1"
+      },
+      "slug": "home"
+    }
+  }
+}

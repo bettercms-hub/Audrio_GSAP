@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "bettercms pull-content && next build",
     "start": "next start",
     "lint": "next lint",
     "clean": "rm -rf .next",
@@ -13,12 +13,13 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
   },
   "dependencies": {
+    "gsap": "^3.13.0",
     "next": "^14.2.0",
     "react": "^18.3.0",
-    "react-dom": "^18.3.0",
-    "gsap": "^3.13.0"
+    "react-dom": "^18.3.0"
   },
   "devDependencies": {
+    "@bettercms-ai/cli": "^0.14.7",
     "@types/node": "^20.11.0",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",

@@ -1,22 +1,24 @@
 import React from 'react'
+import bcmsHome from "../bcms-content/home.json";
+import { bcms, bcmsStyle } from "../src/bcms-content";
 
 export default function Section4() {
   return (
-    <section id="section4">
+    <section id="section4" data-bcms-section-label="Section4">
       <img 
-        src="/images/img1.jpeg" 
+        src={bcms(bcmsHome, "section4-img-audira-lifestyle", "/images/img1.jpeg")} 
         alt="Audira lifestyle" 
-        className="img1 radius" 
+        className="img1 radius" data-bcms-field="section4-img-audira-lifestyle" data-bcms-kind="image" data-bcms-style="2" style={bcmsStyle(bcmsHome, "section4-img-audira-lifestyle")} 
       />
       <img 
-        src="/images/img2.jpeg" 
+        src={bcms(bcmsHome, "section4-img-audira-lifestyle-2", "/images/img2.jpeg")} 
         alt="Audira lifestyle" 
-        className="img2 radius" 
+        className="img2 radius" data-bcms-field="section4-img-audira-lifestyle-2" data-bcms-kind="image" data-bcms-style="2" style={bcmsStyle(bcmsHome, "section4-img-audira-lifestyle-2")} 
       />
       <img 
-        src="/images/img3.jpeg" 
+        src={bcms(bcmsHome, "section4-img-audira-lifestyle-3", "/images/img3.jpeg")} 
         alt="Audira lifestyle" 
-        className="img3 radius" 
+        className="img3 radius" data-bcms-field="section4-img-audira-lifestyle-3" data-bcms-kind="image" data-bcms-style="2" style={bcmsStyle(bcmsHome, "section4-img-audira-lifestyle-3")} 
       />
     </section>
   )
