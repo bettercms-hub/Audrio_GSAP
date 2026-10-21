@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { formatDate, jobLocation, listJobs, pageMeta } from '@/src/jobs'
+import { entryAttrs, entryField, listJobs, pageMeta } from '@/src/jobs'
+import JobMeta from './JobMeta'
 import bcmsJobs from '../../bcms-content/jobs.json'
 import { bcms, bcmsStyle } from '../../src/bcms-content'
 import { sectionsFor } from '@bettercms-ai/next'
@@ -27,12 +28,10 @@ export default function JobsPage() {
           <ul className="job-list">
             {jobs.map((job) => (
               <li key={job.slug}>
-                <a href={`/jobs/${job.slug}`} className="job-card radius">
+                <a href={`/jobs/${job.slug}`} className="job-card radius" {...entryAttrs(job.id)}>
                   <div>
-                    <h2 className="job-title">{job.title}</h2>
-                    <p className="job-meta">
-                      {[jobLocation(job), job.jobType, formatDate(job.postedAt)].filter(Boolean).join(' · ')}
-                    </p>
+                    <h2 className="job-title" {...entryField(job.id, 'title')}>{job.title}</h2>
+                    <JobMeta job={job} />
                   </div>
                   <span className="btn radius" data-bcms-field="jobs-card-cta" data-bcms-kind="text">{bcms(bcmsJobs, 'jobs-card-cta', 'View role')}</span>
                 </a>

@@ -3,6 +3,7 @@ import path from "path";
 
 /** One open role, synced from JobDiva into the BetterCMS "Jobs" collection (slug job-openings). */
 export type Job = {
+  id: string;
   slug: string;
   title: string;
   jobType?: string;
@@ -14,7 +15,7 @@ export type Job = {
   applyUrl?: string;
 };
 
-type Entry = { slug: string; data: Record<string, unknown> };
+type Entry = { id: string; slug: string; data: Record<string, unknown> };
 
 const str = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : undefined);
 const html = (v: unknown) => str(v) ?? str((v as { html?: unknown } | null)?.html);
@@ -41,6 +42,7 @@ export function listJobs(): Job[] {
   return entries()
     .filter((e) => e.data.show_on_site !== false)
     .map((e) => ({
+      id: e.id,
       slug: e.slug,
       title: str(e.data.title) ?? e.slug,
       jobType: str(e.data.job_type),
@@ -58,7 +60,21 @@ export function getJob(slug: string): Job | undefined {
   return listJobs().find((j) => j.slug === slug);
 }
 
-export const jobLocation = (j: Job) => [j.city, j.state].filter(Boolean).join(", ");
-
 export const formatDate = (iso?: string) =>
   iso ? new Date(iso).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }) : undefined;
+
+/** The id of a CMS page's own entry (its field values), for binding page copy shown on another route. */
+export function pageEntryId(slug: string): string | undefined {
+  return snapshot().collections?.[slug]?.[0]?.id;
+}
+
+// ponytail: the same attributes as entryAttrs/entryField in @bettercms-ai/next 0.29; use those after upgrading.
+/** Declares which collection entry an element (a card) shows. */
+export const entryAttrs = (id?: string) => (id ? { "data-bcms-entry": id } : {});
+
+/** Binds an element to one field of an entry; a formatted value (a date) is declared as derived, not editable in place. */
+export function entryField(id: string | undefined, path: string, transform?: "format") {
+  if (!id) return {};
+  const address = `entry:${id}:${path}`;
+  return transform ? { "data-bcms-entry-from": `${address}|${transform}` } : { "data-bcms-entry-field": address };
+}
