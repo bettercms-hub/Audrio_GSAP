@@ -296,3 +296,104 @@ footer .social {
   align-items: center;
   gap: 1rem;
 }
+
+/* jobs */
+.jobs {
+  min-height: 100vh;
+  padding: 9rem 0 6vw;
+}
+
+.jobs .heading {
+  font-size: clamp(3rem, 9vw, 9rem);
+}
+
+.jobs-intro {
+  max-width: 560px;
+  margin-bottom: 3rem;
+}
+
+.job-list {
+  list-style: none;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.job-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.4rem 1.6rem;
+  border: 2px solid var(--black);
+  color: inherit;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.job-card:hover,
+.job-card:focus-visible {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+}
+
+.job-title {
+  font-family: var(--heading-font);
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin-bottom: 0.3rem;
+}
+
+.job-meta {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.job-card .btn,
+.job-apply {
+  background-color: var(--secondary-color);
+  white-space: nowrap;
+}
+
+.jobs-empty {
+  border: 2px dashed var(--primary-color);
+  padding: 2rem;
+}
+
+.job-back {
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.job-detail .heading {
+  font-size: clamp(2.5rem, 6.5vw, 6.5rem);
+}
+
+.job-apply {
+  margin-top: 1.8rem;
+}
+
+.job-body {
+  max-width: 720px;
+  margin-top: 2rem;
+}
+
+.job-body p,
+.job-body ul,
+.job-body ol {
+  margin-bottom: 1rem;
+}
+
+.job-body ul,
+.job-body ol {
+  padding-left: 1.4rem;
+}
+
+@media (max-width: 768px) {
+  .job-card {
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+  }
+}
