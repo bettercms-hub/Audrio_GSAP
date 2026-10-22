@@ -1,5 +1,6 @@
-import { readFileSync } from "fs";
-import path from "path";
+// Written by `bettercms pull-content` at the start of every build, and bundled with the code,
+// so no host needs a filesystem at request time (Cloudflare Workers has none).
+import content from "../bcms-content.json";
 
 /** One published entry of a BetterCMS collection, as `bettercms pull-content` writes it. */
 export type Entry = { id: string; slug: string; data: Record<string, unknown> };
@@ -12,11 +13,12 @@ export const href = (v: unknown) => str(v) ?? str((v as { href?: unknown } | nul
 /** An image value's url (or a plain string). */
 export const imageUrl = (v: unknown) => str(v) ?? str((v as { url?: unknown } | null)?.url);
 
-// ponytail: reads the whole snapshot per call; fine for a few hundred entries at build time
-function snapshot() {
-  // Written by `bettercms pull-content` at the start of every build: a missing file is a broken build, not "no entries".
-  return JSON.parse(readFileSync(path.join(process.cwd(), "bcms-content.json"), "utf8"));
-}
+type Snapshot = {
+  collections?: Record<string, Entry[]>;
+  pages?: { slug: string; metaTitle?: unknown; metaDescription?: unknown }[];
+};
+
+const snapshot = () => content as unknown as Snapshot;
 
 /** The published entries of one collection, by its slug. */
 export function collection(slug: string): Entry[] {

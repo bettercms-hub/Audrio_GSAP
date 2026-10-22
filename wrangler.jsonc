@@ -1,0 +1,20 @@
+// Cloudflare Workers deploy of this Next.js site via OpenNext (`npm run deploy:cloudflare`).
+// Vercel and Netlify build the same repo their own way and ignore this file.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "audrio",
+  "main": ".open-next/worker.js",
+  "account_id": "e2786291a9aed5ac6f461110cb5c11fc",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "audrio"
+    }
+  ]
+}

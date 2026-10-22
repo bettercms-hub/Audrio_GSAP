@@ -36,3 +36,8 @@ next-env.d.ts
 # bettercms pull-content output
 /bcms-content.json
 .env*
+
+# cloudflare (opennext)
+/.open-next/
+/.wrangler/
+.dev.vars*
