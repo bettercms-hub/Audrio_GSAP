@@ -87,9 +87,12 @@ header .btn {
   background-color: var(--secondary-color);
 }
 
+/* Right-aligned beside Buy Now: the centred floating headphone (z-index 9) covers the header's middle. */
 header .nav-links {
   display: flex;
   gap: 2.4rem;
+  margin-left: auto;
+  margin-right: 2.4rem;
 }
 
 header .nav-link {
