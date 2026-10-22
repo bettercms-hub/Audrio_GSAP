@@ -44,7 +44,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
           {post.publishedOn && <span {...entryField(post.id, 'published_on', 'format')}>{formatDate(post.publishedOn)}</span>}
         </p>
         {post.coverUrl && <img src={post.coverUrl} alt={post.coverAlt ?? post.title} className="post-hero radius" {...entryField(post.id, 'cover')} />}
-        {post.bodyHtml && <div className="job-body" {...entryField(post.id, 'body')} dangerouslySetInnerHTML={{ __html: post.bodyHtml }} />}
+        {post.bodyHtml && <div className="job-body" {...entryField(post.id, 'body', 'format')} dangerouslySetInnerHTML={{ __html: post.bodyHtml }} />}
       </main>
       <Footer />
     </>

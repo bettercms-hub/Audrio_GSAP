@@ -1,3 +1,4 @@
+import { marked } from "marked";
 import { collection, html, imageUrl, str } from "./cms";
 
 export { entryAttrs, entryField, formatDate, pageEntryId, pageMeta } from "./cms";
@@ -15,6 +16,8 @@ export type Post = {
   publishedOn?: string;
 };
 
+const markdown = (md: string) => (md.trim() ? (marked.parse(md, { async: false }) as string) : undefined);
+
 /** Published posts, newest first. */
 export function listPosts(): Post[] {
   return collection("blog-posts")
@@ -25,7 +28,8 @@ export function listPosts(): Post[] {
       excerpt: str(e.data.excerpt),
       coverUrl: imageUrl(e.data.cover),
       coverAlt: str((e.data.cover as { altText?: unknown } | null)?.altText),
-      bodyHtml: html(e.data.body),
+      // Airtable rich text arrives as Markdown; it is formatted here, at build time.
+      bodyHtml: typeof e.data.body === "string" ? markdown(e.data.body) : html(e.data.body),
       author: str(e.data.author),
       publishedOn: str(e.data.published_on),
     }))
