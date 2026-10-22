@@ -1,5 +1,6 @@
-import { readFileSync } from "fs";
-import path from "path";
+import { collection, href, html, str } from "./cms";
+
+export { entryAttrs, entryField, formatDate, pageEntryId, pageMeta } from "./cms";
 
 /** One open role, synced from JobDiva into the BetterCMS "Jobs" collection (slug job-openings). */
 export type Job = {
@@ -15,31 +16,9 @@ export type Job = {
   applyUrl?: string;
 };
 
-type Entry = { id: string; slug: string; data: Record<string, unknown> };
-
-const str = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : undefined);
-const html = (v: unknown) => str(v) ?? str((v as { html?: unknown } | null)?.html);
-const href = (v: unknown) => str(v) ?? str((v as { href?: unknown } | null)?.href);
-
-// ponytail: reads the whole snapshot per call; fine for a few hundred roles at build time
-function snapshot() {
-  // Written by `bettercms pull-content` at the start of every build: a missing file is a broken build, not "no jobs".
-  return JSON.parse(readFileSync(path.join(process.cwd(), "bcms-content.json"), "utf8"));
-}
-
-function entries(): Entry[] {
-  return snapshot().collections?.["job-openings"] ?? [];
-}
-
-/** A CMS page's native SEO fields, for Next's metadata. */
-export function pageMeta(slug: string): { title?: string; description?: string } {
-  const page = snapshot().pages?.find((p: { slug: string }) => p.slug === slug);
-  return { title: str(page?.metaTitle), description: str(page?.metaDescription) };
-}
-
 /** Published roles shown on the site, newest first. */
 export function listJobs(): Job[] {
-  return entries()
+  return collection("job-openings")
     .filter((e) => e.data.show_on_site !== false)
     .map((e) => ({
       id: e.id,
@@ -58,23 +37,4 @@ export function listJobs(): Job[] {
 
 export function getJob(slug: string): Job | undefined {
   return listJobs().find((j) => j.slug === slug);
-}
-
-export const formatDate = (iso?: string) =>
-  iso ? new Date(iso).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }) : undefined;
-
-/** The id of a CMS page's own entry (its field values), for binding page copy shown on another route. */
-export function pageEntryId(slug: string): string | undefined {
-  return snapshot().collections?.[slug]?.[0]?.id;
-}
-
-// ponytail: the same attributes as entryAttrs/entryField in @bettercms-ai/next 0.29; use those after upgrading.
-/** Declares which collection entry an element (a card) shows. */
-export const entryAttrs = (id?: string) => (id ? { "data-bcms-entry": id } : {});
-
-/** Binds an element to one field of an entry; a formatted value (a date) is declared as derived, not editable in place. */
-export function entryField(id: string | undefined, path: string, transform?: "format") {
-  if (!id) return {};
-  const address = `entry:${id}:${path}`;
-  return transform ? { "data-bcms-entry-from": `${address}|${transform}` } : { "data-bcms-entry-field": address };
 }
